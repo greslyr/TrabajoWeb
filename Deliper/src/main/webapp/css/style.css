@@ -48,7 +48,7 @@
     border-radius: 5px;
 }
 
-main {
+.mainpri {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +90,7 @@ main {
 /*inicioSesion*/
 
 .bodyiniciar{
-    font-family: 'Open Sans', sans-serif;
+   font-family: "Roboto", sans-serif;
     background-color: #f7f7f7;
     display: flex;
     justify-content: center;
@@ -145,4 +145,34 @@ main {
 .formularioInicio{
      display: flex;
     flex-direction: column;
+}
+
+/*seleccionIngredientes*/
+.ingredientes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ingrediente {
+    text-align: center;
+    width: 350px;
+    margin: 20px
+}
+
+.ingrediente img {
+    width:300px;
+    border-radius: 5px;
+}
+
+.mainseleccion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px
+}
+
+/*seleccionIngredientes*/
+.seleccionado {
+    border: 2px solid yellow;
+    background-color: rgba(255, 255, 0, 0.2);
 }
