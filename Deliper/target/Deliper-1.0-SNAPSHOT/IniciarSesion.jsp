@@ -1,9 +1,3 @@
-<%-- 
-    Document   : IniciarSesion
-    Created on : 24 may. 2024, 21:04:19
-    Author     : Estudio
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,7 +13,7 @@
     <body class="bodyiniciar">
         <div class="container">
             <h1>Bienvenido</h1>
-            <p>Por favor, inicia sesión con tu cuenta</p>
+            <p>Por favor, inicia sesión con tu cuenta.</p>
             <form class="formularioInicio">
                 <input type="email" placeholder="Correo" required class="inputsesion">
                 <input type="password" placeholder="Contraseña" required class="inputsesion">
