@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bodyprincipal{
+    background:  rgb(21,112,21);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px
+}
+
+.navegacion div{
+    display: flex;
+    align-items: center;
+    gap: 50px
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700
+}
+
+.login-button {
+    background-color: #FFA500;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.mainpri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-top: 150px
+}
+
+.vegetable-image {
+    width: 600px;
+}
+
+.text-container {
+    width: 534px;
+}
+
+.text-container h1{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 50px;
+    text-align: justify;
+}
+
+.start-button {
+    background-color: #FFA500;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/*inicioSesion*/
+
+.bodyiniciar{
+    font-family: "Roboto", sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 10px;
+    color: #666;
+    text-decoration: none;
+}
+
+.new-account {
+    margin-top: 10px;
+}
+
+.new-account a {
+    color: rgb(21,112,21);
+    text-decoration: none;
+}
+
+.btnIngresar{
+    padding: 10px;
+    background-color: rgb(21,112,21);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.inputsesion{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.formularioInicio{
+    display: flex;
+    flex-direction: column;
+}
+
+/*seleccionIngredientes*/
+.ingredientes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ingrediente {
+    text-align: center;
+    width: 350px;
+    margin: 20px
+}
+
+.ingrediente img {
+    width:300px;
+    border-radius: 5px;
+}
+
+/*seleccionIngredientes*/
+.seleccionado {
+    border: 2px solid yellow;
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+/*PerfilUsuario*/
+.bodyperfil{
+    background: #157015;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.card {
+    color: #157015;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    background:white
+}
+
+
+
+.card-a{
+    text-decoration: none
+}
+.card:hover {
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+
+
+.card-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#nombreusuario{
+    color: #FFA500;
+}
+
+.image-slider{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 1000px;
+    padding-bottom: 4px;
+
+}
+
+.favorite-recipes{
+    display: flex;
+    justify-content: center;
+    gap: 40px
+}
+
+.title-usuario{
+    text-align: center
+}
+
+.account-edit, .review-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    width: 300px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    margin-top: 20px;
+
+}
+
+.input-field, .textarea-field {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none
+}
+
+.textarea-field {
+    width: 300px;
+    height: 100px; 
+}
+
+.boton-enviar {
+    background-color: #ffa500;
+    color: white; 
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton-enviar:hover {
+    background-color: #e69500; 
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.title-perfil{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recipe-history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.formulario-ingredientes{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 1200px;
+   gap: 40px;
+   margin-bottom: 50px
+}
+.option-container{
+    display: flex;
+    flex-direction: column
+}
+
+.title-ingredientes{
+    text-align: center;
+        margin-bottom: 30px
+}
+.formulario-centrado{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.centrado-ingrediente{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center
+}
