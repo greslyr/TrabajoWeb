@@ -1,9 +1,3 @@
-<%-- 
-    Document   : IniciarSesion
-    Created on : 24 may. 2024, 21:04:19
-    Author     : Estudio
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,13 +14,21 @@
         <div class="container">
             <h1>Bienvenido</h1>
             <p>Por favor, inicia sesión con tu cuenta</p>
-            <form class="formularioInicio">
-                <input type="email" placeholder="Correo" required class="inputsesion">
-                <input type="password" placeholder="Contraseña" required class="inputsesion">
-                <a href="#" class="forgot-password">Olvidé mi contraseña</a>
+            <form class="formularioInicio" action="srvUsuario" method="post">
+                <input type="hidden" name="action" value="login">
+                <input type="text" name="usuario" placeholder="Usuario" required class="inputsesion">
+                <input type="password" name="contraseña" placeholder="Contraseña" required class="inputsesion">
                 <button type="submit" class="btnIngresar">INGRESAR</button>
-                <p class="new-account">¿Eres nuevo? <a href="#">Crea una cuenta</a></p>
+                <p class="new-account">¿Eres nuevo? <a href="Registro.jsp">Crea una cuenta</a></p>
             </form>
+            <%
+                String error = request.getParameter("error");
+                if ("1".equals(error)) {
+            %>
+            <p style="color:red;">Usuario o contraseña incorrectos.</p>
+            <%
+                }
+            %>
         </div>
     </body>
 </html>
