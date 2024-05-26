@@ -16,51 +16,36 @@ public class srvUsuario extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("action");
         
-        if (action != null && action.equals("login")) {
-            handleLogin(request, response);
-        } else {
-            // Otras acciones se pueden manejar aquí
+        if (action != null) {
+            switch (action) {
+                case "login":
+                    handleLogin(request, response);
+                    break;
+                case "register":
+                    handleRegister(request, response);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
     private void handleLogin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -79,5 +64,44 @@ public class srvUsuario extends HttpServlet {
         } else {
             response.sendRedirect("IniciarSesion.jsp?error=1");
         }
+    }
+
+    private void handleRegister(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String usuario = request.getParameter("usuario");
+        String correo = request.getParameter("correo");
+        String password = request.getParameter("password");
+        String repetirPassword = request.getParameter("repetirPassword");
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+        // Verifica si las contraseñas coinciden
+        if (!password.equals(repetirPassword)) {
+            response.sendRedirect("Registro.jsp?error=1");
+            return;
+        }
+
+        // Verifica si el usuario ya existe
+        if (usuarioDAO.usuarioExiste(usuario)) {
+            response.sendRedirect("Registro.jsp?error=2");
+            return;
+        }
+
+        // Verifica si el correo tiene un formato válido
+        if (!correo.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            response.sendRedirect("Registro.jsp?error=3");
+            return;
+        }
+
+        // Crea un nuevo usuario
+        Usuario nuevoUsuario = new Usuario();
+        nuevoUsuario.setUsuario(usuario);
+        nuevoUsuario.setCorreo(correo);
+        nuevoUsuario.setContraseña(password);
+        nuevoUsuario.setRol("user");
+
+        usuarioDAO.crearUsuario(nuevoUsuario);
+
+        response.sendRedirect("Principal.jsp");
     }
 }

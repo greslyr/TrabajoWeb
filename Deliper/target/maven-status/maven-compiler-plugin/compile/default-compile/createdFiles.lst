@@ -1,3 +1,6 @@
+controlador\srvUsuario.class
 util\Prueba1.class
+dao\UsuarioDAO.class
 util\SQLConexion.class
 util\MySQLConexion.class
+modelo\Usuario.class

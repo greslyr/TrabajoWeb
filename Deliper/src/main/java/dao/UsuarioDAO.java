@@ -14,8 +14,8 @@ public class UsuarioDAO {
         String sql = "SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ?";
         try (Connection con = MySQLConexion.getConexion();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setString(2, usuario);
-            ps.setString(3, contraseña);
+            ps.setString(1, usuario);
+            ps.setString(2, contraseña);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 usr = new Usuario();
@@ -30,4 +30,34 @@ public class UsuarioDAO {
         }
         return usr;
     }
+
+    public boolean usuarioExiste(String usuario) {
+        String sql = "SELECT COUNT(*) FROM usuarios WHERE usuario = ?";
+        try (Connection con = MySQLConexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, usuario);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void crearUsuario(Usuario usuario) {
+        String sql = "INSERT INTO usuarios (usuario, contraseña, correo, rol) VALUES (?, ?, ?, ?)";
+        try (Connection con = MySQLConexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, usuario.getUsuario());
+            ps.setString(2, usuario.getContraseña());
+            ps.setString(3, usuario.getCorreo());
+            ps.setString(4, usuario.getRol());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }
