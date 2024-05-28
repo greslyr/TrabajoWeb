@@ -1,6 +1,10 @@
 controlador\srvUsuario.class
+dao\RecetaDAO.class
+modelo\Receta.class
 util\Prueba1.class
 dao\UsuarioDAO.class
 util\SQLConexion.class
+interfaces\CRUDRecetas.class
+controlador\srvReceta.class
 util\MySQLConexion.class
 modelo\Usuario.class

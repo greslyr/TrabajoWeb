@@ -5,9 +5,17 @@
         <servlet-name>srvUsuario</servlet-name>
         <servlet-class>controlador.srvUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>srvReceta</servlet-name>
+        <servlet-class>controlador.srvReceta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvUsuario</servlet-name>
         <url-pattern>/srvUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvReceta</servlet-name>
+        <url-pattern>/srvReceta</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>Principal.jsp</welcome-file>
